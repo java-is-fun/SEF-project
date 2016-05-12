@@ -1,0 +1,125 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class TestActivity {
+	public static void main(String args[]) {
+		Scanner sc = new Scanner(System.in);
+
+		// creating a project
+		boolean flag = true;
+		String choice, name;
+		
+
+		
+		ArrayList<Activity> activityList = new ArrayList<Activity>();
+		ArrayList<Integer> skill = new ArrayList<Integer>();
+		
+
+		// array for skill type
+		
+		
+		
+		
+
+		int i = 0, duration = 0, staff = 0, dependencyLevel = 0;
+		//int totalDuration = 0;
+		//int totalStaffNeeded = 0;
+
+		int totalSkillsNeeded[] = new int[3];
+		System.out.println("*******Add Activity Menu*******");
+		while(flag) {
+			System.out.println("Enter activity name");
+			name = sc.nextLine();
+			System.out.println("Enter activity duration: ");
+			duration = sc.nextInt();
+			System.out.println("Enter number of staff: ");
+			staff = sc.nextInt();
+			sc.nextLine();
+			while (flag) {
+				System.out.println("Enter skill type needed: ");
+				int newSkill = sc.nextInt();
+				skill.add(newSkill);
+				sc.nextLine();
+				System.out.println("Do you want to add another skill? Y or y for YES. N or n for NO");
+				choice = sc.nextLine();
+				if(choice.equals("y") || choice.equals("Y")) {
+					flag = true;
+				}
+				else if(choice.equals("n") || choice.equals("N")){
+					flag = false;							
+				}
+				else{ 
+					System.out.println("Invalid input");
+					break;
+				}
+			}
+			
+			System.out.println("Enter dependency level: ");
+			dependencyLevel = sc.nextInt();
+			flag = true;
+			activityList.add(new Activity(name,duration, staff, skill, dependencyLevel));
+			if(flag){
+				System.out.println("Do you want to add another activity?");
+				sc.nextLine();
+				choice = sc.nextLine();
+				if(choice.equals("y") || choice.equals("Y")) {
+					flag = false;
+				}
+				else if(choice.equals("n") || choice.equals("N")){
+					flag  = false;
+					break;						
+				}
+				else{ 
+					System.out.println("Invalid input");
+					break;
+				}
+			}
+			flag = true;
+
+		}
+		for(int j = 0; j < activityList.size(); j++) {
+			System.out.println(activityList.get(j).getName());
+		}
+		System.out.println("Finished");
+		
+			//activity[i] = new Activity(duration, staff, skill, dependency);
+			//totalDuration += activity[i].getDuration();
+			//totalStaffNeeded += activity[i].getStaffNeeded();
+			// totalSkillsNeeded[i] = activity[i].getSkillsType();
+
+	/*	System.out.println("Duration: " + activity[i].getDuration());
+			System.out.println("Skill type: " + activity[i].getSkillsType());
+			System.out.println("Staff number: " + activity[i].getStaffNeeded());
+			System.out.println("Skills needed: " + activity[i].getSkillsType());
+			System.out.println("*");
+			System.out.println("*");
+			System.out.println("*");
+			System.out.println("*");
+			System.out.println("*");
+			for(int x = 0; x < skill.size(); x++) {
+				
+				sum += skill.get(x);
+				
+			}
+			System.out.println(activity[i].getSkillsType());
+			// get and set total
+			NewProject.setTotalSkillsNeeded(totalSkillsNeeded[i]);
+			System.out.println("Total skills needed: " + NewProject.getTotalSkillsNeeded());
+			// get and get total duration
+			NewProject.setTotalDuration(totalDuration);
+			System.out.println("Total duration: " + NewProject.getTotalDuration());
+			// set and get total staff needed
+			NewProject.setTotalStaffNeeded(totalStaffNeeded);
+			System.out.println("Total staff needed: " + NewProject.getTotalStaffNeeded());
+			System.out.println("");
+		
+		// print all skills needed
+		for (i = 0; i < activity.length; i++) {
+			NewProject.setTotalSkillsNeeded(totalSkillsNeeded[i]);
+			System.out.println("Total skills need: " + NewProject.getTotalSkillsNeeded());
+		}
+*/
+	
+
+}
+}
